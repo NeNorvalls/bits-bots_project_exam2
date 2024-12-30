@@ -1,0 +1,16 @@
+:root {
+  --cart-counter-bg-color: #3023c7;
+  --cart-counter-text-color: #fff;
+  --cart-counter-border-radius: 50%;
+}
+
+.cart-counter {
+  background-color: var(--cart-counter-bg-color);
+  color: var(--cart-counter-text-color);
+  border-radius: var(--cart-counter-border-radius);
+  padding: 4px 8px;
+  font-size: 1rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+}

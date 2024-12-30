@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap");
+
+$font-helvetica: "Helvetica", sans-serif;
+$font-arial: "Arial", sans-serif;
+$font-roboto: "Roboto", sans-serif;
+
+body {
+  font-family: $font-roboto, $font-helvetica, $font-arial;
+  background-color: #fff;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-helvetica, $font-arial, sans-serif;
+}
+
+p {
+  font-family: $font-roboto, $font-helvetica, $font-arial;
+}
+
+.header {
+  font-family: $font-helvetica, $font-arial, sans-serif;
+}
+
+.button {
+  font-family: $font-roboto, $font-helvetica, $font-arial;
+}
+
+#portfolioText {
+  font-size: 18px;
+  margin-bottom: 20px;
+  padding: 1rem;
+  letter-spacing: 2px;
+}
+
+.portfolioLink {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 24px;
+  color: #8b0000;
+  transition: color 0.3s ease;
+  padding: 10px;
+}
+
+.portfolioLink:hover {
+  color:darkmagenta;
+}

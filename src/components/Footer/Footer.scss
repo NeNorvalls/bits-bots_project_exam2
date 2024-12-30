@@ -1,0 +1,46 @@
+:root {
+  --footer-text-color: #fff;
+  --footer-text-align: center;
+  --footer-bg-color: #16191e;
+  --footer-padding: 20px;
+  --footer-font-size: 18px;
+  --footer-font-size-mobile: 16px;
+  --footer-text-margin: 10px;
+  --footer-text-font-size: 14px;
+  --footer-text-font-size-mobile: 12px;
+}
+
+.footer {
+  color: var(--footer-text-color);
+  text-align: var(--footer-text-align);
+  margin: 0 auto;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+
+  &__container {
+    background-color: var(--footer-bg-color);
+    padding: var(--footer-padding);
+
+    @media (max-width: 768px) {
+      padding: 10px;
+    }
+  }
+
+  &__content {
+    font-size: var(--footer-font-size);
+
+    @media (max-width: 768px) {
+      font-size: var(--footer-font-size-mobile);
+    }
+  }
+
+  &__text {
+    font-size: var(--footer-text-font-size);
+    margin: var(--footer-text-margin);
+
+    @media (max-width: 768px) {
+      font-size: var(--footer-text-font-size-mobile);
+    }
+  }
+}

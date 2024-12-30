@@ -1,0 +1,126 @@
+:root {
+  --checkout-max-width: 600px;
+  --checkout-padding: 1rem;
+  --checkout-border: 1px solid #000;
+  --checkout-border-radius: 0.25rem;
+  --checkout-margin-top: 2rem;
+  --checkout-margin-bottom: 10rem;
+  --checkout-font-size: 1.2rem;
+  --checkout-title-font-size: 1.5rem;
+  --checkout-field-margin: 1rem;
+  --checkout-input-padding: 0.5rem;
+  --checkout-input-font-size: 1rem;
+  --checkout-button-padding: 0.75rem 1rem;
+  --checkout-button-font-size: 1.2rem;
+  --checkout-button-bg-color: #ad0000;
+  --checkout-button-hover-bg-color: #750000;
+}
+
+.checkout {
+  width: 100%;
+  max-width: var(--checkout-max-width);
+  margin: 0 auto;
+  padding: var(--checkout-padding);
+  border: var(--checkout-border);
+  border-radius: var(--checkout-border-radius);
+  margin-top: var(--checkout-margin-top);
+  margin-bottom: var(--checkout-margin-bottom);
+
+  &__items {
+    font-size: var(--checkout-font-size);
+    margin-bottom: var(--checkout-field-margin);
+  }
+
+  &__section {
+    margin-bottom: var(--checkout-field-margin);
+  }
+
+  &__title {
+    font-size: var(--checkout-title-font-size);
+    margin-bottom: var(--checkout-field-margin);
+  }
+
+  &__field {
+    margin-bottom: var(--checkout-field-margin);
+
+    & label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    & input {
+      width: 100%;
+      padding: var(--checkout-input-padding);
+      font-size: var(--checkout-input-font-size);
+      border: var(--checkout-border);
+      border-radius: var(--checkout-border-radius);
+    }
+
+    @media (max-width: 768px) {
+      margin-top: var(--checkout-field-margin);
+      margin-bottom: var(--checkout-field-margin);
+    }
+  }
+
+  &__button {
+    display: block;
+    padding: var(--checkout-button-padding);
+    font-size: var(--checkout-button-font-size);
+    background-color: var(--checkout-button-bg-color);
+    color: #fff;
+    border: none;
+    border-radius: var(--checkout-border-radius);
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+
+    &:hover {
+      background-color: var(--checkout-button-hover-bg-color);
+      color: #fff;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: var(--checkout-padding);
+    border: none;
+    &__field {
+      margin-bottom: 20px;
+    }
+    &__button {
+      margin-top: var(--checkout-field-margin);
+      font-size: 16px;
+    }
+    &__items {
+      font-size: 14px;
+    }
+    &__title {
+      font-size: 18px;
+    }
+  }
+}
+
+.modal {
+  max-width: var(--checkout-max-width);
+  margin: 0 auto;
+
+  &-title {
+    font-size: var(--checkout-title-font-size);
+    margin-bottom: var(--checkout-field-margin);
+  }
+
+  &-body {
+    font-size: var(--checkout-font-size);
+  }
+
+  &-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: var(--checkout-field-margin);
+  }
+}
+
+.error {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}

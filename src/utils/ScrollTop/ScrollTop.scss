@@ -1,0 +1,44 @@
+:root {
+  --primary-color: #3023c7;
+  --secondary-color: #1d157a;
+  --border: 2px solid white;
+  --button-size: 40px;
+  --button-size-mobile: 30px;
+  --button-right: 20px;
+  --button-bottom: 20px;
+  --button-font-size: 24px;
+  --button-font-size-mobile: 16px;
+}
+
+.scroll-to-top-button {
+  position: fixed;
+  bottom: var(--button-bottom);
+  right: var(--button-right);
+  background-color: var(--primary-color);
+  color: #fff;
+  border: var(--border);
+  border-radius: 50%;
+  width: var(--button-size);
+  height: var(--button-size);
+  padding: 0;
+  font-size: var(--button-font-size);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 9999;
+
+  &.hidden {
+    display: none;
+  }
+
+  &:hover {
+    background-color: var(--secondary-color);
+  }
+
+  @media screen and (max-width: 768px) {
+    width: var(--button-size-mobile);
+    height: var(--button-size-mobile);
+    right: 10px;
+    bottom: 10px;
+    font-size: var(--button-font-size-mobile);
+  }
+}

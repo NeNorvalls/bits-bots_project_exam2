@@ -1,0 +1,161 @@
+:root {
+  --browse-page-padding: 20px;
+  --browse-page-margin-bottom: 5rem;
+  --browse-page-title-font-size: 24px;
+  --browse-page-title-margin-bottom: 20px;
+  --browse-page-title-text-align: center;
+  --browse-page-title-padding: 1rem;
+  --browse-page-title-margin-top: 2rem;
+  --browse-page-error-message-color: red;
+  --product-card-bg-color: #fff;
+  --product-card-border: 1px solid #16191e;
+  --product-card-padding: 15px;
+  --product-card-hover-transform: translateY(-5px);
+  --product-card-image-body-padding: 10px;
+  --product-card-title-font-size: 18px;
+  --product-card-price-font-weight: bold;
+  --product-card-price-color: #3023c7;
+  --product-card-category-font-size: 14px;
+  --product-card-category-color: #16191e;
+  --product-card-actions-text-align: center;
+  --product-card-btn-bg-color: #ad0000;
+  --product-card-btn-hover-bg-color: #750000;
+  --pagination-margin-top: 20px;
+  --btn-pagination-bg-color: #3023c7;
+  --btn-pagination-padding: 10px 20px;
+  --btn-pagination-color: #fff;
+  --btn-pagination-hover-bg-color: #1d157a;
+  --btn-pagination-font-size: 14px;
+}
+
+.browse-page {
+  padding: var(--browse-page-padding);
+  margin-bottom: var(--browse-page-margin-bottom);
+
+  &__title {
+    font-size: var(--browse-page-title-font-size);
+    margin-bottom: var(--browse-page-title-margin-bottom);
+    text-align: var(--browse-page-title-text-align);
+    padding: var(--browse-page-title-padding);
+    margin-top: var(--browse-page-title-margin-top);
+  }
+
+  &__error-message {
+    color: var(--browse-page-error-message-color);
+  }
+
+  .container {
+    .row {
+      margin-bottom: var(--product-card-margin-bottom);
+
+      .col-md-4 {
+        .product-card {
+          background-color: var(--product-card-bg-color);
+          border: var(--product-card-border);
+          padding: var(--product-card-padding);
+          margin: 20px 0;
+          transition: transform 0.2s ease;
+
+          &:hover {
+            transform: var(--product-card-hover-transform);
+          }
+
+          &__image,
+          &__body {
+            padding: var(--product-card-image-body-padding);
+          }
+
+          &__title {
+            font-size: var(--product-card-title-font-size);
+            margin-bottom: var(--product-card-title-margin-bottom);
+          }
+
+          &__price {
+            font-weight: var(--product-card-price-font-weight);
+            color: var(--product-card-price-color);
+            margin-bottom: var(--product-card-title-margin-bottom);
+          }
+
+          &__category {
+            font-size: var(--product-card-category-font-size);
+            color: var(--product-card-category-color);
+          }
+
+          &__actions {
+            text-align: var(--product-card-actions-text-align);
+          }
+        }
+      }
+    }
+
+    .col-md-4 {
+      .product-card__actions {
+        .product-card__btn {
+          background-color: var(--product-card-btn-bg-color);
+          color: #fff;
+          transition: background-color 0.2s ease;
+          margin: 0 10px;
+
+          &:hover {
+            background-color: var(--product-card-btn-hover-bg-color);
+          }
+        }
+      }
+    }
+
+    .pagination {
+      margin-top: var(--pagination-margin-top);
+    }
+  }
+
+  .btn-pagination {
+    background-color: var(--btn-pagination-bg-color);
+    padding: var(--btn-pagination-padding);
+    color: var(--btn-pagination-color);
+    margin: 0 10px;
+    transition: background-color 0.2s ease;
+    font-size: var(--btn-pagination-font-size);
+
+    &:hover {
+      background-color: var(--btn-pagination-hover-bg-color);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .browse-page {
+    padding: 0;
+  }
+
+  .browse-page .container .row .col-md-4 .product-card {
+    padding: 0;
+  }
+
+  .col-md-4 {
+    .product-card__actions {
+      .product-card__btn {
+        background-color: #0078d4;
+        margin: 0 1rem;
+        font-size: 14px;
+      }
+    }
+
+    .pagination {
+      margin-top: 10px;
+    }
+
+    &::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+
+  .browse-page .btn-pagination {
+    padding: 8px 10px;
+    color: #fff;
+    font-size: 14px;
+    margin: 0 10px;
+    transition: background-color 0.2s ease;
+  }
+}

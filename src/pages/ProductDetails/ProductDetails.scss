@@ -1,0 +1,29 @@
+:root {
+  --product-details-custom-margin: 20px;
+  --product-details-custom-font-size: 1.5rem;
+}
+
+.product-details-custom {
+  &__col {
+    margin-bottom: var(--product-details-custom-margin);
+  }
+
+  &__image {
+    max-width: 100%;
+    height: auto;
+  }
+
+  &__title {
+    font-size: var(--product-details-custom-font-size);
+    margin-top: 0;
+  }
+
+  &__info {
+    margin: 0;
+  }
+
+  &__category-list {
+    list-style: none;
+    padding: 0;
+  }
+}

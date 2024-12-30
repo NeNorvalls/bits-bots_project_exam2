@@ -1,0 +1,123 @@
+:root {
+  --primary-color: #3023c7;
+  --secondary-color: #1d157a;
+  --border-color: #16191e;
+  --background-color: #fff;
+  --text-color: #000;
+  --hover-color: #ad0000;
+}
+
+.search-label {
+  font-weight: bold;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+.search-results {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.search-results__item {
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  flex-basis: calc(33.33% - 10px);
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: var(--hover-color);
+    color: #fff;
+  }
+
+  &__title {
+    margin: 0;
+    font-weight: bold;
+    font-size: 14px;
+  }
+}
+
+.search-results__message {
+  margin-top: 10px;
+  font-style: italic;
+}
+
+.modal-overlay {
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  padding-top: 8rem;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  max-height: 100vh;
+
+  &__content {
+    background-color: var(--background-color);
+    border-radius: 4px;
+    padding: 20px;
+    width: 80%;
+    max-width: 800px;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+
+    &__button-container {
+      text-align: left;
+      margin-top: 20px;
+
+      &__button {
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: var(--secondary-color);
+        }
+      }
+    }
+  }
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+
+  &:hover {
+    background-color: var(--secondary-color);
+  }
+}
+
+.modal-button-container {
+  padding: 10px;
+
+  .btn-secondary {
+    background-color: #ad0000;
+  }
+}
+
+img {
+  height: auto;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .search-results {
+    display: block;
+  }
+}

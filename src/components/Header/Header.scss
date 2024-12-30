@@ -1,0 +1,148 @@
+:root {
+  --header-bg-color: #16191e;
+  --header-padding-y: 10px;
+  --header-padding-x: 20px;
+  --header-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --header-font-size: 36px;
+  --header-font-weight: bold;
+  --header-text-color: #fff;
+  --header-text-decoration: block;
+  --header-hover-color: #ffbf00;
+  --header-menu-toggle-display: none;
+  --header-menu-toggle-background: transparent;
+  --header-menu-toggle-border: none;
+  --header-menu-toggle-cursor: pointer;
+  --header-menu-toggle-margin-left: auto;
+  --header-bar-width: 25px;
+  --header-bar-height: 3px;
+  --header-bar-background: #fff;
+  --header-bar-hover-background: #ffbf00;
+  --header-nav-display: flex;
+  --header-nav-align-items: center;
+  --header-nav-item-color: #fff;
+  --header-nav-item-text-decoration: none;
+  --header-nav-item-margin-right: 20px;
+  --header-nav-item-font-size: 16px;
+  --header-nav-item-hover-color: #ffbf00;
+  --header-nav-item-hover-text-decoration: underline;
+  --header-nav-item-active-font-weight: bold;
+  --header-menu-open-display: block;
+  --header-brand-font-size: 24px;
+  --header-nav-item-font-size-mobile: 16px;
+  --header-nav-item-margin-mobile: 10px;
+  --header-nav-item-text-align: center;
+  --header-nav-item-background-mobile: #fff;
+  --header-nav-item-hover-background-mobile: #fff;
+  --header-nav-item-color-mobile: #16191e;
+}
+
+.header {
+  background-color: var(--header-bg-color);
+  padding: var(--header-padding-y) var(--header-padding-x);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--header-box-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  &__left {
+    margin-right: 20px;
+  }
+
+  &__brand {
+    font-size: var(--header-font-size);
+    font-weight: var(--header-font-weight);
+    color: var(--header-text-color);
+    text-decoration: var(--header-text-decoration);
+
+    &:hover {
+      color: var(--header-hover-color);
+      text-decoration: var(--header-text-decoration);
+    }
+  }
+
+  &__menu-toggle {
+    background: var(--header-menu-toggle-background);
+    border: var(--header-menu-toggle-border);
+    cursor: var(--header-menu-toggle-cursor);
+    margin-left: var(--header-menu-toggle-margin-left);
+
+    .bar {
+      width: var(--header-bar-width);
+      height: var(--header-bar-height);
+      background-color: var(--header-bar-background);
+      margin: 4px 0;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    &:hover {
+      .bar {
+        background-color: var(--header-bar-hover-background);
+      }
+    }
+  }
+
+  &__nav {
+    display: var(--header-nav-display);
+    align-items: var(--header-nav-align-items);
+
+    &-item {
+      color: var(--header-nav-item-color);
+      text-decoration: var(--header-nav-item-text-decoration);
+      margin-right: var(--header-nav-item-margin-right);
+      font-size: var(--header-nav-item-font-size);
+
+      &:hover {
+        color: var(--header-nav-item-hover-color);
+        text-decoration: var(--header-nav-item-hover-text-decoration);
+      }
+
+      &.active {
+        font-weight: var(--header-nav-item-active-font-weight);
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    padding: var(--header-padding-y);
+
+    .header__brand {
+      font-size: var(--header-brand-font-size);
+    }
+
+    .header__nav {
+      display: none;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      background-color: var(--header-nav-item-background-mobile);
+      box-shadow: var(--header-box-shadow);
+      flex-direction: column;
+      width: 100%;
+      color: var(--header-nav-item-color-mobile);
+
+      &-item {
+        margin: var(--header-nav-item-margin-mobile);
+        width: 100%;
+        text-align: var(--header-nav-item-text-align);
+        color: var(--header-nav-item-color-mobile);
+
+        &:hover {
+          background-color: var(--header-nav-item-hover-background-mobile);
+        }
+      }
+    }
+
+    &.menu-open .header__nav {
+      display: flex;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .header__menu-toggle {
+      display: none;
+    }
+  }
+}
